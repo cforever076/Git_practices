@@ -1,12 +1,12 @@
 rgs={
 
     rg1={
-        name="pk-rg"
+        name="dev-rg1"
         location="eastus"
     },
 
     rg2={
-        name="pk-rg2"
+        name="dev-rg2"
         location="eastus2"
     }
 }
