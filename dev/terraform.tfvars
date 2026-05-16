@@ -10,9 +10,6 @@ rgs={
         location="eastus2"
     }
 
- rg3={
-        name="dev-rg4"
-        location="eastus2"
-    }
+
 
 }
