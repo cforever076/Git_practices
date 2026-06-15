@@ -1,0 +1,9 @@
+name: Testing first Pipeline
+
+on: workflow_dispatch
+jobs:
+  myfirst_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "prakash"
