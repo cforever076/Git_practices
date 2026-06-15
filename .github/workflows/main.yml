@@ -15,5 +15,5 @@ jobs:
       - name: folder status  
         run: ls -a
       - name: Print name with variable
-        run: eaho" $myname $lastname"
+        run: echo" $myname $lastname"
       
