@@ -1,13 +1,19 @@
 name: Testing first Pipeline
 
 on: workflow_dispatch
+env:
+  myname: prakash
 jobs:
   myfirst_job:
     name: My first job
     runs-on: ubuntu-latest
+    env:
+      lastname: kumar
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.3
       - name: folder status  
         run: ls -a
+      - name: Print name with variable
+        run: eaho" $ myname $ lastname"
       
