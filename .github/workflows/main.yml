@@ -6,4 +6,8 @@ jobs:
     name: My first job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "prakash"
+      - name: checkout
+        uses: actions/checkout@v6.0.3
+      - name: folder status  
+        run: ls -a
+      
