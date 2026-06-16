@@ -15,5 +15,5 @@ jobs:
       - name: folder status  
         run: ls -a
       - name: Print name with variable
-        run: echo ${{ vars.myname }} ${{ vars.lastname }}
+        run: echo ${{ vars.myname }} ${{ secrets.lastname }}
       
