@@ -1,0 +1,11 @@
+name: Terraform workflow
+on: workflow_dispatch
+
+runs-on: ubuntu-latest
+
+jobs:
+  Terraform-init-plan-Apply
+
+  
+
+  
