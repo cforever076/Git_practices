@@ -2,42 +2,14 @@ name: Terraform workflow
 
 on: workflow_dispatch
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
-  Infra-creation-Pipeline:
-    runs-on: ubuntu-latest
+  example_matrix:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        version: [12, 14, 16]
+        include:
+          - os: windows-latest
+            version: 17
+  
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Azure Login using service Priinciple
-        uses: azure/login@v3
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      # - name: Azure login using oidc
-      #   uses: azure/login@v2
-      #   with:
-      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
-      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-        
-      - name: Terraform Init
-        working-directory: dev
-        run: terraform init
-
-      - name: Terraform Plan
-        working-directory: dev
-        run: terraform plan
-
-      - name: Terraform Apply
-        working-directory: dev
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
