@@ -7,9 +7,11 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        version: [12, 14, 16]
-        include:
-          - os: windows-latest
-            version: 17
+
+    name: matrix-job
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: echo "Hello Prakash"
+        
   
 
